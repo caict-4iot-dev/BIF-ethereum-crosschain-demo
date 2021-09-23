@@ -1,0 +1,720 @@
+{
+	"compiler": {
+		"version": "0.7.0+commit.9e61f92b"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "operation",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "AssetBurnEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "operation",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "AssetMintEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "operation",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "approveEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "operation",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "cross_TxNo",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "txType",
+						"type": "uint8"
+					}
+				],
+				"name": "sendAckedEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "operation",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "cross_TxNo",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "txType",
+						"type": "uint8"
+					}
+				],
+				"name": "sendTxEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "operation",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "chain_Code",
+						"type": "string"
+					}
+				],
+				"name": "setChainCodeEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "operation",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "gateway_Address",
+						"type": "address"
+					}
+				],
+				"name": "setGatewayEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "operation",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "cross_TxNo",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "txType",
+						"type": "uint8"
+					}
+				],
+				"name": "startTxEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "operation",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "takeOutEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "operation",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "transferEvent",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "getAllowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "crossTxNo",
+						"type": "string"
+					}
+				],
+				"name": "getCrossTx",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					},
+					{
+						"internalType": "enum Storage.TxResultEnum",
+						"name": "",
+						"type": "uint8"
+					},
+					{
+						"internalType": "enum Storage.TxRefundedEnum",
+						"name": "",
+						"type": "uint8"
+					},
+					{
+						"internalType": "enum Storage.TxOriginEnum",
+						"name": "",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getVersion",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "crossChainAdd",
+						"type": "address"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "crossTxNo",
+						"type": "string"
+					},
+					{
+						"internalType": "enum Storage.TxResultEnum",
+						"name": "result",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "version",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes",
+						"name": "proof",
+						"type": "bytes"
+					}
+				],
+				"name": "sendAcked",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "srcBid",
+						"type": "string"
+					},
+					{
+						"internalType": "address payable",
+						"name": "destAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "srcChainCode",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "destChainCode",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "txType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "crossTxNo",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes",
+						"name": "payload",
+						"type": "bytes"
+					},
+					{
+						"internalType": "string",
+						"name": "extension",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "remark",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "version",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes",
+						"name": "proof",
+						"type": "bytes"
+					}
+				],
+				"name": "sendTx",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "chainCode",
+						"type": "string"
+					}
+				],
+				"name": "setChainCode",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "gatewayAddress",
+						"type": "address"
+					}
+				],
+				"name": "setGateway",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "srcAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "destBid",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "srcChainCode",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "destChainCode",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "txType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes",
+						"name": "payload",
+						"type": "bytes"
+					},
+					{
+						"internalType": "string",
+						"name": "extension",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "remark",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "version",
+						"type": "string"
+					}
+				],
+				"name": "startTx",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "crossTxNo",
+						"type": "string"
+					},
+					{
+						"internalType": "address payable",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "takeOut",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "Cross-chain main contract",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"AssetBurnEvent(string,address,uint256)": {
+					"notice": "Event emitted when the main chain points are destroyed"
+				},
+				"AssetMintEvent(string,address,address,uint256)": {
+					"notice": "Event emitted when the main chain points are cast"
+				},
+				"approveEvent(string,uint256)": {
+					"notice": "Event emitted when the main chain points authorized transfer"
+				},
+				"sendAckedEvent(string,string,uint8)": {
+					"notice": "Event emitted when gateway submitted cross-chain transaction confirmation"
+				},
+				"sendTxEvent(string,string,uint8)": {
+					"notice": "Event emitted when gateway submitted cross-chain transaction"
+				},
+				"setChainCodeEvent(string,string)": {
+					"notice": "Event emitted when chaincode is set"
+				},
+				"setGatewayEvent(string,address)": {
+					"notice": "Event emitted when gateway is set"
+				},
+				"startTxEvent(string,string,uint8)": {
+					"notice": "Event emitted when user sent cross-chain transaction"
+				},
+				"takeOutEvent(string,address)": {
+					"notice": "Event emitted when assets withdrawn"
+				},
+				"transferEvent(string,uint256)": {
+					"notice": "Event emitted when the main chain points is transferred"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"approve(address,address,uint256)": {
+					"notice": "Number of points that can be transferred by authorization"
+				},
+				"balanceOf(address)": {
+					"notice": "Query main chain points balance"
+				},
+				"getAllowance(address,address)": {
+					"notice": "Query the number of authorized points"
+				},
+				"getCrossTx(string)": {
+					"notice": "Query cross-chain transaction information"
+				},
+				"getVersion()": {
+					"notice": "Query contract version information"
+				},
+				"initialize(address)": {
+					"notice": "Cross-chain contract initialization. Can be executed once."
+				},
+				"sendAcked(string,uint8,string,bytes)": {
+					"notice": "Gateway node submits cross-chain confirmation transaction"
+				},
+				"sendTx(string,address,string,string,uint8,string,bytes,string,string,string,bytes)": {
+					"notice": "Gateway node submits cross-chain transaction"
+				},
+				"setChainCode(string)": {
+					"notice": "Set subchain AC code. Can only be executed by the contract owner."
+				},
+				"setGateway(address)": {
+					"notice": "Set subchain cross-chain gateway. Can only be executed by the contract owner."
+				},
+				"startTx(address,string,string,string,uint8,bytes,string,string,string)": {
+					"notice": "Users of the subchain initiate cross-chain transactions"
+				},
+				"takeOut(string,address)": {
+					"notice": "Withdrawal of abnormal cross-chain assets"
+				},
+				"transfer(address,uint256)": {
+					"notice": "Transfer main chain points in subchain"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/CrossChainContract.sol": "CrossChainContract"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/CrossChainContract.sol": {
+			"keccak256": "0xb53cc87dbd90fc83603110a532e09868e333d3fbecb19f59fc096eb1b07af83f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fd748af62ebec51b783658efd28ad7ea639f4247b4d78c319912f1a2ec4657ff",
+				"dweb:/ipfs/QmcgWuBS53QLGpu6spo5M5X8S16se6V28sS3N1KB1tTQBn"
+			]
+		},
+		"contracts/CrossChainContractAdditional.sol": {
+			"keccak256": "0xc58872b45d2be77830cfdbb41b5aa3c4a09784ba9aab66724b34f10790407ac0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://538ea75e5b775c5f47ca35f72fc6960b7aab2e643dbf9f71ceccc74d26a07f4d",
+				"dweb:/ipfs/QmS1M5DD8t8n4ntc31Sh7fyjddoqUuCXa7Uwtp9Cmy6xq2"
+			]
+		},
+		"contracts/Storage.sol": {
+			"keccak256": "0x9391aea5e4b94f0804789720cdcb5109db10bf90a064bae9c7af85e2d3333016",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://efd27739883d8ea622fad4eb43a596b48488f4d364af1d868ebd9b031d45d20b",
+				"dweb:/ipfs/QmevWCggCkoKTpTpjrvZdWa6tiWHqpPiYMLCDMcBnpdXty"
+			]
+		},
+		"lib/LibString.sol": {
+			"keccak256": "0x2545f3caabc266edb7388cab9125862f49a03294e62e3db2e28e31d72c5d0900",
+			"urls": [
+				"bzz-raw://aceba2a993417ccf8ff195c5b6eec627c96b0c35d08406f6bc1a883ea01ccdf9",
+				"dweb:/ipfs/QmXHmySr4kgGdG82YGgTNJXWfF1qStBKbWTrNbEJYvcNTz"
+			]
+		}
+	},
+	"version": 1
+}

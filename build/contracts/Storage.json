@@ -1,0 +1,4727 @@
+{
+  "contractName": "Storage",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "operation",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "AssetBurnEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "operation",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "AssetMintEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "operation",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "approveEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "operation",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "cross_TxNo",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "txType",
+          "type": "uint8"
+        }
+      ],
+      "name": "sendAckedEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "operation",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "cross_TxNo",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "txType",
+          "type": "uint8"
+        }
+      ],
+      "name": "sendTxEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "operation",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "chain_Code",
+          "type": "string"
+        }
+      ],
+      "name": "setChainCodeEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "operation",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "gateway_Address",
+          "type": "address"
+        }
+      ],
+      "name": "setGatewayEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "operation",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "cross_TxNo",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "txType",
+          "type": "uint8"
+        }
+      ],
+      "name": "startTxEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "operation",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "takeOutEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "operation",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferEvent",
+      "type": "event"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"operation\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"AssetBurnEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"operation\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"AssetMintEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"operation\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"approveEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"operation\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"cross_TxNo\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"txType\",\"type\":\"uint8\"}],\"name\":\"sendAckedEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"operation\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"cross_TxNo\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"txType\",\"type\":\"uint8\"}],\"name\":\"sendTxEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"operation\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"chain_Code\",\"type\":\"string\"}],\"name\":\"setChainCodeEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"operation\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"gateway_Address\",\"type\":\"address\"}],\"name\":\"setGatewayEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"operation\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"cross_TxNo\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"txType\",\"type\":\"uint8\"}],\"name\":\"startTxEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"operation\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"takeOutEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"operation\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transferEvent\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"stateVariables\":{\"_AllowValue\":{\"details\":\"Number of authorized points\"},\"_ChainCode\":{\"details\":\"Store subchain AC code \"},\"_CrossTxNum\":{\"details\":\"Used to calculate cross-chain transaction number\"},\"_GatewayList\":{\"details\":\"Gateway node list\"},\"_MainAsset\":{\"details\":\"Number of main chain points\"},\"_Owner\":{\"details\":\"The person who deployed the contract\"},\"_Version\":{\"details\":\"Contract version information\"}},\"title\":\"Cross-chain contract storage contract\",\"version\":1},\"userdoc\":{\"events\":{\"AssetBurnEvent(string,address,uint256)\":{\"notice\":\"Event emitted when the main chain points are destroyed\"},\"AssetMintEvent(string,address,address,uint256)\":{\"notice\":\"Event emitted when the main chain points are cast\"},\"approveEvent(string,uint256)\":{\"notice\":\"Event emitted when the main chain points authorized transfer\"},\"sendAckedEvent(string,string,uint8)\":{\"notice\":\"Event emitted when gateway submitted cross-chain transaction confirmation\"},\"sendTxEvent(string,string,uint8)\":{\"notice\":\"Event emitted when gateway submitted cross-chain transaction\"},\"setChainCodeEvent(string,string)\":{\"notice\":\"Event emitted when chaincode is set\"},\"setGatewayEvent(string,address)\":{\"notice\":\"Event emitted when gateway is set\"},\"startTxEvent(string,string,uint8)\":{\"notice\":\"Event emitted when user sent cross-chain transaction\"},\"takeOutEvent(string,address)\":{\"notice\":\"Event emitted when assets withdrawn\"},\"transferEvent(string,uint256)\":{\"notice\":\"Event emitted when the main chain points is transferred\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Storage.sol\":\"Storage\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":500},\"remappings\":[]},\"sources\":{\"project:/contracts/CrossChainContractAdditional.sol\":{\"keccak256\":\"0xc58872b45d2be77830cfdbb41b5aa3c4a09784ba9aab66724b34f10790407ac0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://538ea75e5b775c5f47ca35f72fc6960b7aab2e643dbf9f71ceccc74d26a07f4d\",\"dweb:/ipfs/QmS1M5DD8t8n4ntc31Sh7fyjddoqUuCXa7Uwtp9Cmy6xq2\"]},\"project:/contracts/Storage.sol\":{\"keccak256\":\"0x9391aea5e4b94f0804789720cdcb5109db10bf90a064bae9c7af85e2d3333016\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://efd27739883d8ea622fad4eb43a596b48488f4d364af1d868ebd9b031d45d20b\",\"dweb:/ipfs/QmevWCggCkoKTpTpjrvZdWa6tiWHqpPiYMLCDMcBnpdXty\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220b7663c369bfa16d89ac30d6579dde1eb44f300d06274ae58cc817bbebb5a482c64736f6c63430007000033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220b7663c369bfa16d89ac30d6579dde1eb44f300d06274ae58cc817bbebb5a482c64736f6c63430007000033",
+  "immutableReferences": {},
+  "sourceMap": "204:4718:2:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "204:4718:2:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.8.0;\r\n\r\npragma experimental ABIEncoderV2;\r\n\r\nimport \"./CrossChainContractAdditional.sol\";\r\n\r\n/// @title Cross-chain contract storage contract\r\ncontract Storage {\r\n    \r\n    /// @dev Store the processing results of cross-chain transactions\r\n    /// @dev Four states: initialization, processed successfully, processed failed, and processing timeout\r\n    enum TxResultEnum {\r\n        INIT,\r\n        ACK_SUCCESS,\r\n        ACK_FAIL,\r\n        ACK_TIMEOUT\r\n    }\r\n\r\n    /// @dev Store refund results of cross-chain transactions\r\n    /// @dev Three states: no refund required, to be refunded, refunded\r\n    enum TxRefundedEnum {\r\n        NONE,\r\n        TODO,\r\n        REFUNDED\r\n    }\r\n\r\n    /// @dev Role of chain: Source chain, target chain and relay chain\r\n    enum TxOriginEnum {\r\n        SRC,\r\n        DEST,\r\n        RELAY\r\n    }\r\n    \r\n    /// @notice Event emitted when chaincode is set\r\n    event setChainCodeEvent(string operation, string chain_Code);\r\n\r\n    /// @notice Event emitted when gateway is set\r\n    event setGatewayEvent(string operation, address gateway_Address);\r\n\r\n    /// @notice Event emitted when user sent cross-chain transaction\r\n    event startTxEvent(string operation, string cross_TxNo, uint8 txType);\r\n\r\n    /// @notice Event emitted when gateway submitted cross-chain transaction\r\n    event sendTxEvent(string operation, string cross_TxNo, uint8 txType);\r\n\r\n    /// @notice Event emitted when gateway submitted cross-chain transaction confirmation\r\n    event sendAckedEvent(string operation, string cross_TxNo, uint8 txType);\r\n\r\n    /// @notice Event emitted when the main chain points are cast\r\n    event AssetMintEvent(\r\n        string operation,\r\n        address from,\r\n        address to,\r\n        uint256 value\r\n    );\r\n\r\n    /// @notice Event emitted when the main chain points are destroyed\r\n    event AssetBurnEvent(string operation, address from, uint256 value);\r\n\r\n    /// @notice Event emitted when the main chain points authorized transfer\r\n    event approveEvent(string operation, uint256 value);\r\n\r\n    /// @notice Event emitted when the main chain points is transferred\r\n    event transferEvent(string operation, uint256 value);\r\n\r\n    /// @notice Event emitted when assets withdrawn\r\n    event takeOutEvent(string operation, address to);\r\n\r\n    CrossChainContractAdditional internal _CrossChainContractAdditional;\r\n    \r\n    /// @dev The person who deployed the contract\r\n    address internal _Owner;\r\n\r\n    /// @dev Store subchain AC code \r\n    string internal _ChainCode;\r\n\r\n    /// @dev Gateway node list\r\n    address[] internal _GatewayList;\r\n\r\n    /// @dev Contract version information\r\n    string internal _Version;\r\n\r\n    mapping(bytes32 => _CrossTxObj) internal _CrossTxObject;\r\n\r\n    /// @dev Number of main chain points\r\n    mapping(bytes32 => uint256) internal _MainAsset;\r\n\r\n    /// @dev Number of authorized points\r\n    mapping(bytes32 => uint256) internal _AllowValue;\r\n\r\n    /// @dev Used to calculate cross-chain transaction number\r\n    uint256 internal _CrossTxNum;\r\n    uint256 internal _MainChainCode;\r\n\r\n    /// @notice Cross-chain transaction object\r\n    /// @member cross-chain transaction number\r\n    /// @member source chain AC code\r\n    /// @member dest chain AC code\r\n    /// @member source address\r\n    /// @member dest address\r\n    /// @member cross-chain transaction type:0, 1, 2, 3\r\n    /// @member cross-chain transaction description\r\n    /// @member tag information\r\n    /// @member cross-chain transaction processing results\r\n    /// @member withdrawal status of cross-chain transaction assets\r\n    /// @member user comments\r\n    /// @member sendTx proof information\r\n    /// @member sendAcked proof information\r\n    /// @member send chain contract version information\r\n    /// @member contract location\r\n    struct _CrossTxObj {\r\n        string CrossTxNo;\r\n        string SrcChainCode;\r\n        string DestChainCode;\r\n        string SrcBid;\r\n        string DestBid;\r\n        uint8 TxType;\r\n        bytes Payload;\r\n        string Remark;\r\n        TxResultEnum Result;\r\n        TxRefundedEnum Refunded;\r\n        string Extension;\r\n        _SendProof SendProofs;\r\n        _AckProof AckProofs;\r\n        string Version;\r\n        TxOriginEnum Origin;\r\n    }\r\n\r\n    /// @notice SendTx proof information\r\n    /// @member block number where the transaction is located\r\n    /// @member hash of transaction\r\n    /// @member verifier of startTx transactions\r\n    struct _SendProof {\r\n        uint256 LedgerSeq;\r\n        string TxHash;\r\n        address verifieraddr;\r\n    }\r\n\r\n    /// @notice SendAcked proof information\r\n    /// @member block number where the transaction is located\r\n    /// @member hash of transaction\r\n    /// @member verifier of sendTx and sendAcked transactions\r\n    struct _AckProof {\r\n        uint256 LedgerSeq;\r\n        string TxHash;\r\n        address verifieraddr;\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\bif\\cross-contract-solidity\\contracts\\Storage.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Storage.sol",
+    "exportedSymbols": {
+      "Storage": [
+        2707
+      ]
+    },
+    "id": 2708,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2529,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:32:2"
+      },
+      {
+        "id": 2530,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "69:33:2"
+      },
+      {
+        "absolutePath": "project:/contracts/CrossChainContractAdditional.sol",
+        "file": "./CrossChainContractAdditional.sol",
+        "id": 2531,
+        "nodeType": "ImportDirective",
+        "scope": 2708,
+        "sourceUnit": 2528,
+        "src": "106:44:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 2532,
+          "nodeType": "StructuredDocumentation",
+          "src": "154:50:2",
+          "text": "@title Cross-chain contract storage contract"
+        },
+        "fullyImplemented": true,
+        "id": 2707,
+        "linearizedBaseContracts": [
+          2707
+        ],
+        "name": "Storage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Storage.TxResultEnum",
+            "id": 2537,
+            "members": [
+              {
+                "id": 2533,
+                "name": "INIT",
+                "nodeType": "EnumValue",
+                "src": "442:4:2"
+              },
+              {
+                "id": 2534,
+                "name": "ACK_SUCCESS",
+                "nodeType": "EnumValue",
+                "src": "457:11:2"
+              },
+              {
+                "id": 2535,
+                "name": "ACK_FAIL",
+                "nodeType": "EnumValue",
+                "src": "479:8:2"
+              },
+              {
+                "id": 2536,
+                "name": "ACK_TIMEOUT",
+                "nodeType": "EnumValue",
+                "src": "498:11:2"
+              }
+            ],
+            "name": "TxResultEnum",
+            "nodeType": "EnumDefinition",
+            "src": "413:103:2"
+          },
+          {
+            "canonicalName": "Storage.TxRefundedEnum",
+            "id": 2541,
+            "members": [
+              {
+                "id": 2538,
+                "name": "NONE",
+                "nodeType": "EnumValue",
+                "src": "691:4:2"
+              },
+              {
+                "id": 2539,
+                "name": "TODO",
+                "nodeType": "EnumValue",
+                "src": "706:4:2"
+              },
+              {
+                "id": 2540,
+                "name": "REFUNDED",
+                "nodeType": "EnumValue",
+                "src": "721:8:2"
+              }
+            ],
+            "name": "TxRefundedEnum",
+            "nodeType": "EnumDefinition",
+            "src": "660:76:2"
+          },
+          {
+            "canonicalName": "Storage.TxOriginEnum",
+            "id": 2545,
+            "members": [
+              {
+                "id": 2542,
+                "name": "SRC",
+                "nodeType": "EnumValue",
+                "src": "845:3:2"
+              },
+              {
+                "id": 2543,
+                "name": "DEST",
+                "nodeType": "EnumValue",
+                "src": "859:4:2"
+              },
+              {
+                "id": 2544,
+                "name": "RELAY",
+                "nodeType": "EnumValue",
+                "src": "874:5:2"
+              }
+            ],
+            "name": "TxOriginEnum",
+            "nodeType": "EnumDefinition",
+            "src": "816:70:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 2546,
+              "nodeType": "StructuredDocumentation",
+              "src": "898:47:2",
+              "text": "@notice Event emitted when chaincode is set"
+            },
+            "id": 2552,
+            "name": "setChainCodeEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2551,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2548,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2552,
+                  "src": "975:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2547,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "975:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2550,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "chain_Code",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2552,
+                  "src": "993:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2549,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "993:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "974:37:2"
+            },
+            "src": "951:61:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 2553,
+              "nodeType": "StructuredDocumentation",
+              "src": "1020:45:2",
+              "text": "@notice Event emitted when gateway is set"
+            },
+            "id": 2559,
+            "name": "setGatewayEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2558,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2555,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2559,
+                  "src": "1093:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2554,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1093:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2557,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "gateway_Address",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2559,
+                  "src": "1111:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2556,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1111:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1092:43:2"
+            },
+            "src": "1071:65:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 2560,
+              "nodeType": "StructuredDocumentation",
+              "src": "1144:64:2",
+              "text": "@notice Event emitted when user sent cross-chain transaction"
+            },
+            "id": 2568,
+            "name": "startTxEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2567,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2562,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2568,
+                  "src": "1233:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2561,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1233:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2564,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "cross_TxNo",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2568,
+                  "src": "1251:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2563,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1251:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2566,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "txType",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2568,
+                  "src": "1270:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 2565,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1270:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1232:51:2"
+            },
+            "src": "1214:70:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 2569,
+              "nodeType": "StructuredDocumentation",
+              "src": "1292:72:2",
+              "text": "@notice Event emitted when gateway submitted cross-chain transaction"
+            },
+            "id": 2577,
+            "name": "sendTxEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2576,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2571,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2577,
+                  "src": "1388:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2570,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1388:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2573,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "cross_TxNo",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2577,
+                  "src": "1406:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2572,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1406:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2575,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "txType",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2577,
+                  "src": "1425:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 2574,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1425:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1387:51:2"
+            },
+            "src": "1370:69:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 2578,
+              "nodeType": "StructuredDocumentation",
+              "src": "1447:85:2",
+              "text": "@notice Event emitted when gateway submitted cross-chain transaction confirmation"
+            },
+            "id": 2586,
+            "name": "sendAckedEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2585,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2580,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2586,
+                  "src": "1559:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2579,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1559:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2582,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "cross_TxNo",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2586,
+                  "src": "1577:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2581,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1577:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2584,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "txType",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2586,
+                  "src": "1596:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 2583,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1596:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1558:51:2"
+            },
+            "src": "1538:72:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 2587,
+              "nodeType": "StructuredDocumentation",
+              "src": "1618:61:2",
+              "text": "@notice Event emitted when the main chain points are cast"
+            },
+            "id": 2597,
+            "name": "AssetMintEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2596,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2589,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2597,
+                  "src": "1716:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2588,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1716:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2591,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2597,
+                  "src": "1743:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2590,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1743:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2593,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2597,
+                  "src": "1766:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2592,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1766:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2595,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2597,
+                  "src": "1787:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2594,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1787:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1705:102:2"
+            },
+            "src": "1685:123:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 2598,
+              "nodeType": "StructuredDocumentation",
+              "src": "1816:66:2",
+              "text": "@notice Event emitted when the main chain points are destroyed"
+            },
+            "id": 2606,
+            "name": "AssetBurnEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2605,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2600,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2606,
+                  "src": "1909:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2599,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1909:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2602,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2606,
+                  "src": "1927:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2601,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1927:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2604,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2606,
+                  "src": "1941:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2603,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1941:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1908:47:2"
+            },
+            "src": "1888:68:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 2607,
+              "nodeType": "StructuredDocumentation",
+              "src": "1964:72:2",
+              "text": "@notice Event emitted when the main chain points authorized transfer"
+            },
+            "id": 2613,
+            "name": "approveEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2612,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2609,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2613,
+                  "src": "2061:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2608,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2061:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2611,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2613,
+                  "src": "2079:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2610,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2079:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2060:33:2"
+            },
+            "src": "2042:52:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 2614,
+              "nodeType": "StructuredDocumentation",
+              "src": "2102:67:2",
+              "text": "@notice Event emitted when the main chain points is transferred"
+            },
+            "id": 2620,
+            "name": "transferEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2619,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2616,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2620,
+                  "src": "2195:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2615,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2195:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2618,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2620,
+                  "src": "2213:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2617,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2213:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2194:33:2"
+            },
+            "src": "2175:53:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 2621,
+              "nodeType": "StructuredDocumentation",
+              "src": "2236:47:2",
+              "text": "@notice Event emitted when assets withdrawn"
+            },
+            "id": 2627,
+            "name": "takeOutEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2626,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2623,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2627,
+                  "src": "2308:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2622,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2308:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2625,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2627,
+                  "src": "2326:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2624,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2326:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2307:30:2"
+            },
+            "src": "2289:49:2"
+          },
+          {
+            "constant": false,
+            "id": 2629,
+            "mutability": "mutable",
+            "name": "_CrossChainContractAdditional",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 2707,
+            "src": "2346:67:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CrossChainContractAdditional_$2527",
+              "typeString": "contract CrossChainContractAdditional"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 2628,
+              "name": "CrossChainContractAdditional",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2527,
+              "src": "2346:28:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CrossChainContractAdditional_$2527",
+                "typeString": "contract CrossChainContractAdditional"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "documentation": {
+              "id": 2630,
+              "nodeType": "StructuredDocumentation",
+              "src": "2426:45:2",
+              "text": "@dev The person who deployed the contract"
+            },
+            "id": 2632,
+            "mutability": "mutable",
+            "name": "_Owner",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 2707,
+            "src": "2477:23:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 2631,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "2477:7:2",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "documentation": {
+              "id": 2633,
+              "nodeType": "StructuredDocumentation",
+              "src": "2509:32:2",
+              "text": "@dev Store subchain AC code "
+            },
+            "id": 2635,
+            "mutability": "mutable",
+            "name": "_ChainCode",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 2707,
+            "src": "2547:26:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 2634,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "2547:6:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "documentation": {
+              "id": 2636,
+              "nodeType": "StructuredDocumentation",
+              "src": "2582:26:2",
+              "text": "@dev Gateway node list"
+            },
+            "id": 2639,
+            "mutability": "mutable",
+            "name": "_GatewayList",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 2707,
+            "src": "2614:31:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 2637,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "2614:7:2",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 2638,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "2614:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "documentation": {
+              "id": 2640,
+              "nodeType": "StructuredDocumentation",
+              "src": "2654:37:2",
+              "text": "@dev Contract version information"
+            },
+            "id": 2642,
+            "mutability": "mutable",
+            "name": "_Version",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 2707,
+            "src": "2697:24:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 2641,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "2697:6:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 2646,
+            "mutability": "mutable",
+            "name": "_CrossTxObject",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 2707,
+            "src": "2730:55:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$__CrossTxObj_$2692_storage_$",
+              "typeString": "mapping(bytes32 => struct Storage._CrossTxObj)"
+            },
+            "typeName": {
+              "id": 2645,
+              "keyType": {
+                "id": 2643,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "2738:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "2730:31:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$__CrossTxObj_$2692_storage_$",
+                "typeString": "mapping(bytes32 => struct Storage._CrossTxObj)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 2644,
+                "name": "_CrossTxObj",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 2692,
+                "src": "2749:11:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$__CrossTxObj_$2692_storage_ptr",
+                  "typeString": "struct Storage._CrossTxObj"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "documentation": {
+              "id": 2647,
+              "nodeType": "StructuredDocumentation",
+              "src": "2794:36:2",
+              "text": "@dev Number of main chain points"
+            },
+            "id": 2651,
+            "mutability": "mutable",
+            "name": "_MainAsset",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 2707,
+            "src": "2836:47:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+              "typeString": "mapping(bytes32 => uint256)"
+            },
+            "typeName": {
+              "id": 2650,
+              "keyType": {
+                "id": 2648,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "2844:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "2836:27:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                "typeString": "mapping(bytes32 => uint256)"
+              },
+              "valueType": {
+                "id": 2649,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "2855:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "documentation": {
+              "id": 2652,
+              "nodeType": "StructuredDocumentation",
+              "src": "2892:36:2",
+              "text": "@dev Number of authorized points"
+            },
+            "id": 2656,
+            "mutability": "mutable",
+            "name": "_AllowValue",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 2707,
+            "src": "2934:48:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+              "typeString": "mapping(bytes32 => uint256)"
+            },
+            "typeName": {
+              "id": 2655,
+              "keyType": {
+                "id": 2653,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "2942:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "2934:27:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                "typeString": "mapping(bytes32 => uint256)"
+              },
+              "valueType": {
+                "id": 2654,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "2953:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "documentation": {
+              "id": 2657,
+              "nodeType": "StructuredDocumentation",
+              "src": "2991:57:2",
+              "text": "@dev Used to calculate cross-chain transaction number"
+            },
+            "id": 2659,
+            "mutability": "mutable",
+            "name": "_CrossTxNum",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 2707,
+            "src": "3054:28:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2658,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "3054:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 2661,
+            "mutability": "mutable",
+            "name": "_MainChainCode",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 2707,
+            "src": "3089:31:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2660,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "3089:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "Storage._CrossTxObj",
+            "id": 2692,
+            "members": [
+              {
+                "constant": false,
+                "id": 2663,
+                "mutability": "mutable",
+                "name": "CrossTxNo",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "3873:16:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2662,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "3873:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2665,
+                "mutability": "mutable",
+                "name": "SrcChainCode",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "3900:19:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2664,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "3900:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2667,
+                "mutability": "mutable",
+                "name": "DestChainCode",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "3930:20:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2666,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "3930:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2669,
+                "mutability": "mutable",
+                "name": "SrcBid",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "3961:13:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2668,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "3961:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2671,
+                "mutability": "mutable",
+                "name": "DestBid",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "3985:14:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2670,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "3985:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2673,
+                "mutability": "mutable",
+                "name": "TxType",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "4010:12:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 2672,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4010:5:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2675,
+                "mutability": "mutable",
+                "name": "Payload",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "4033:13:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 2674,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4033:5:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2677,
+                "mutability": "mutable",
+                "name": "Remark",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "4057:13:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2676,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4057:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2679,
+                "mutability": "mutable",
+                "name": "Result",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "4081:19:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_TxResultEnum_$2537",
+                  "typeString": "enum Storage.TxResultEnum"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2678,
+                  "name": "TxResultEnum",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 2537,
+                  "src": "4081:12:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_TxResultEnum_$2537",
+                    "typeString": "enum Storage.TxResultEnum"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2681,
+                "mutability": "mutable",
+                "name": "Refunded",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "4111:23:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_TxRefundedEnum_$2541",
+                  "typeString": "enum Storage.TxRefundedEnum"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2680,
+                  "name": "TxRefundedEnum",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 2541,
+                  "src": "4111:14:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_TxRefundedEnum_$2541",
+                    "typeString": "enum Storage.TxRefundedEnum"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2683,
+                "mutability": "mutable",
+                "name": "Extension",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "4145:16:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2682,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4145:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2685,
+                "mutability": "mutable",
+                "name": "SendProofs",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "4172:21:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$__SendProof_$2699_storage_ptr",
+                  "typeString": "struct Storage._SendProof"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2684,
+                  "name": "_SendProof",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 2699,
+                  "src": "4172:10:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$__SendProof_$2699_storage_ptr",
+                    "typeString": "struct Storage._SendProof"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2687,
+                "mutability": "mutable",
+                "name": "AckProofs",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "4204:19:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$__AckProof_$2706_storage_ptr",
+                  "typeString": "struct Storage._AckProof"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2686,
+                  "name": "_AckProof",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 2706,
+                  "src": "4204:9:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$__AckProof_$2706_storage_ptr",
+                    "typeString": "struct Storage._AckProof"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2689,
+                "mutability": "mutable",
+                "name": "Version",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "4234:14:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2688,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4234:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2691,
+                "mutability": "mutable",
+                "name": "Origin",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2692,
+                "src": "4259:19:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_TxOriginEnum_$2545",
+                  "typeString": "enum Storage.TxOriginEnum"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2690,
+                  "name": "TxOriginEnum",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 2545,
+                  "src": "4259:12:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_TxOriginEnum_$2545",
+                    "typeString": "enum Storage.TxOriginEnum"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "_CrossTxObj",
+            "nodeType": "StructDefinition",
+            "scope": 2707,
+            "src": "3843:443:2",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Storage._SendProof",
+            "id": 2699,
+            "members": [
+              {
+                "constant": false,
+                "id": 2694,
+                "mutability": "mutable",
+                "name": "LedgerSeq",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2699,
+                "src": "4515:17:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2693,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4515:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2696,
+                "mutability": "mutable",
+                "name": "TxHash",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2699,
+                "src": "4543:13:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2695,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4543:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2698,
+                "mutability": "mutable",
+                "name": "verifieraddr",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2699,
+                "src": "4567:20:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 2697,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4567:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "_SendProof",
+            "nodeType": "StructDefinition",
+            "scope": 2707,
+            "src": "4486:109:2",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Storage._AckProof",
+            "id": 2706,
+            "members": [
+              {
+                "constant": false,
+                "id": 2701,
+                "mutability": "mutable",
+                "name": "LedgerSeq",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2706,
+                "src": "4839:17:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2700,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4839:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2703,
+                "mutability": "mutable",
+                "name": "TxHash",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2706,
+                "src": "4867:13:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2702,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4867:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2705,
+                "mutability": "mutable",
+                "name": "verifieraddr",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2706,
+                "src": "4891:20:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 2704,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4891:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "_AckProof",
+            "nodeType": "StructDefinition",
+            "scope": 2707,
+            "src": "4811:108:2",
+            "visibility": "public"
+          }
+        ],
+        "scope": 2708,
+        "src": "204:4718:2"
+      }
+    ],
+    "src": "33:4891:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/Storage.sol",
+      "exportedSymbols": {
+        "Storage": [
+          2707
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.8",
+            ".0"
+          ]
+        },
+        "id": 2529,
+        "name": "PragmaDirective",
+        "src": "33:32:2"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 2530,
+        "name": "PragmaDirective",
+        "src": "69:33:2"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 2528,
+          "absolutePath": "project:/contracts/CrossChainContractAdditional.sol",
+          "file": "./CrossChainContractAdditional.sol",
+          "scope": 2708,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2531,
+        "name": "ImportDirective",
+        "src": "106:44:2"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            2707
+          ],
+          "name": "Storage",
+          "scope": 2708
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": "@title Cross-chain contract storage contract"
+            },
+            "id": 2532,
+            "name": "StructuredDocumentation",
+            "src": "154:50:2"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Storage.TxResultEnum",
+              "name": "TxResultEnum"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "INIT"
+                },
+                "id": 2533,
+                "name": "EnumValue",
+                "src": "442:4:2"
+              },
+              {
+                "attributes": {
+                  "name": "ACK_SUCCESS"
+                },
+                "id": 2534,
+                "name": "EnumValue",
+                "src": "457:11:2"
+              },
+              {
+                "attributes": {
+                  "name": "ACK_FAIL"
+                },
+                "id": 2535,
+                "name": "EnumValue",
+                "src": "479:8:2"
+              },
+              {
+                "attributes": {
+                  "name": "ACK_TIMEOUT"
+                },
+                "id": 2536,
+                "name": "EnumValue",
+                "src": "498:11:2"
+              }
+            ],
+            "id": 2537,
+            "name": "EnumDefinition",
+            "src": "413:103:2"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Storage.TxRefundedEnum",
+              "name": "TxRefundedEnum"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "NONE"
+                },
+                "id": 2538,
+                "name": "EnumValue",
+                "src": "691:4:2"
+              },
+              {
+                "attributes": {
+                  "name": "TODO"
+                },
+                "id": 2539,
+                "name": "EnumValue",
+                "src": "706:4:2"
+              },
+              {
+                "attributes": {
+                  "name": "REFUNDED"
+                },
+                "id": 2540,
+                "name": "EnumValue",
+                "src": "721:8:2"
+              }
+            ],
+            "id": 2541,
+            "name": "EnumDefinition",
+            "src": "660:76:2"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Storage.TxOriginEnum",
+              "name": "TxOriginEnum"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "SRC"
+                },
+                "id": 2542,
+                "name": "EnumValue",
+                "src": "845:3:2"
+              },
+              {
+                "attributes": {
+                  "name": "DEST"
+                },
+                "id": 2543,
+                "name": "EnumValue",
+                "src": "859:4:2"
+              },
+              {
+                "attributes": {
+                  "name": "RELAY"
+                },
+                "id": 2544,
+                "name": "EnumValue",
+                "src": "874:5:2"
+              }
+            ],
+            "id": 2545,
+            "name": "EnumDefinition",
+            "src": "816:70:2"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "setChainCodeEvent"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Event emitted when chaincode is set"
+                },
+                "id": 2546,
+                "name": "StructuredDocumentation",
+                "src": "898:47:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "operation",
+                      "overrides": null,
+                      "scope": 2552,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2547,
+                        "name": "ElementaryTypeName",
+                        "src": "975:6:2"
+                      }
+                    ],
+                    "id": 2548,
+                    "name": "VariableDeclaration",
+                    "src": "975:16:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "chain_Code",
+                      "overrides": null,
+                      "scope": 2552,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2549,
+                        "name": "ElementaryTypeName",
+                        "src": "993:6:2"
+                      }
+                    ],
+                    "id": 2550,
+                    "name": "VariableDeclaration",
+                    "src": "993:17:2"
+                  }
+                ],
+                "id": 2551,
+                "name": "ParameterList",
+                "src": "974:37:2"
+              }
+            ],
+            "id": 2552,
+            "name": "EventDefinition",
+            "src": "951:61:2"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "setGatewayEvent"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Event emitted when gateway is set"
+                },
+                "id": 2553,
+                "name": "StructuredDocumentation",
+                "src": "1020:45:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "operation",
+                      "overrides": null,
+                      "scope": 2559,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2554,
+                        "name": "ElementaryTypeName",
+                        "src": "1093:6:2"
+                      }
+                    ],
+                    "id": 2555,
+                    "name": "VariableDeclaration",
+                    "src": "1093:16:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "gateway_Address",
+                      "overrides": null,
+                      "scope": 2559,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2556,
+                        "name": "ElementaryTypeName",
+                        "src": "1111:7:2"
+                      }
+                    ],
+                    "id": 2557,
+                    "name": "VariableDeclaration",
+                    "src": "1111:23:2"
+                  }
+                ],
+                "id": 2558,
+                "name": "ParameterList",
+                "src": "1092:43:2"
+              }
+            ],
+            "id": 2559,
+            "name": "EventDefinition",
+            "src": "1071:65:2"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "startTxEvent"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Event emitted when user sent cross-chain transaction"
+                },
+                "id": 2560,
+                "name": "StructuredDocumentation",
+                "src": "1144:64:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "operation",
+                      "overrides": null,
+                      "scope": 2568,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2561,
+                        "name": "ElementaryTypeName",
+                        "src": "1233:6:2"
+                      }
+                    ],
+                    "id": 2562,
+                    "name": "VariableDeclaration",
+                    "src": "1233:16:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "cross_TxNo",
+                      "overrides": null,
+                      "scope": 2568,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2563,
+                        "name": "ElementaryTypeName",
+                        "src": "1251:6:2"
+                      }
+                    ],
+                    "id": 2564,
+                    "name": "VariableDeclaration",
+                    "src": "1251:17:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "txType",
+                      "overrides": null,
+                      "scope": 2568,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 2565,
+                        "name": "ElementaryTypeName",
+                        "src": "1270:5:2"
+                      }
+                    ],
+                    "id": 2566,
+                    "name": "VariableDeclaration",
+                    "src": "1270:12:2"
+                  }
+                ],
+                "id": 2567,
+                "name": "ParameterList",
+                "src": "1232:51:2"
+              }
+            ],
+            "id": 2568,
+            "name": "EventDefinition",
+            "src": "1214:70:2"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "sendTxEvent"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Event emitted when gateway submitted cross-chain transaction"
+                },
+                "id": 2569,
+                "name": "StructuredDocumentation",
+                "src": "1292:72:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "operation",
+                      "overrides": null,
+                      "scope": 2577,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2570,
+                        "name": "ElementaryTypeName",
+                        "src": "1388:6:2"
+                      }
+                    ],
+                    "id": 2571,
+                    "name": "VariableDeclaration",
+                    "src": "1388:16:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "cross_TxNo",
+                      "overrides": null,
+                      "scope": 2577,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2572,
+                        "name": "ElementaryTypeName",
+                        "src": "1406:6:2"
+                      }
+                    ],
+                    "id": 2573,
+                    "name": "VariableDeclaration",
+                    "src": "1406:17:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "txType",
+                      "overrides": null,
+                      "scope": 2577,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 2574,
+                        "name": "ElementaryTypeName",
+                        "src": "1425:5:2"
+                      }
+                    ],
+                    "id": 2575,
+                    "name": "VariableDeclaration",
+                    "src": "1425:12:2"
+                  }
+                ],
+                "id": 2576,
+                "name": "ParameterList",
+                "src": "1387:51:2"
+              }
+            ],
+            "id": 2577,
+            "name": "EventDefinition",
+            "src": "1370:69:2"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "sendAckedEvent"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Event emitted when gateway submitted cross-chain transaction confirmation"
+                },
+                "id": 2578,
+                "name": "StructuredDocumentation",
+                "src": "1447:85:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "operation",
+                      "overrides": null,
+                      "scope": 2586,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2579,
+                        "name": "ElementaryTypeName",
+                        "src": "1559:6:2"
+                      }
+                    ],
+                    "id": 2580,
+                    "name": "VariableDeclaration",
+                    "src": "1559:16:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "cross_TxNo",
+                      "overrides": null,
+                      "scope": 2586,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2581,
+                        "name": "ElementaryTypeName",
+                        "src": "1577:6:2"
+                      }
+                    ],
+                    "id": 2582,
+                    "name": "VariableDeclaration",
+                    "src": "1577:17:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "txType",
+                      "overrides": null,
+                      "scope": 2586,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 2583,
+                        "name": "ElementaryTypeName",
+                        "src": "1596:5:2"
+                      }
+                    ],
+                    "id": 2584,
+                    "name": "VariableDeclaration",
+                    "src": "1596:12:2"
+                  }
+                ],
+                "id": 2585,
+                "name": "ParameterList",
+                "src": "1558:51:2"
+              }
+            ],
+            "id": 2586,
+            "name": "EventDefinition",
+            "src": "1538:72:2"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "AssetMintEvent"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Event emitted when the main chain points are cast"
+                },
+                "id": 2587,
+                "name": "StructuredDocumentation",
+                "src": "1618:61:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "operation",
+                      "overrides": null,
+                      "scope": 2597,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2588,
+                        "name": "ElementaryTypeName",
+                        "src": "1716:6:2"
+                      }
+                    ],
+                    "id": 2589,
+                    "name": "VariableDeclaration",
+                    "src": "1716:16:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "from",
+                      "overrides": null,
+                      "scope": 2597,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2590,
+                        "name": "ElementaryTypeName",
+                        "src": "1743:7:2"
+                      }
+                    ],
+                    "id": 2591,
+                    "name": "VariableDeclaration",
+                    "src": "1743:12:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "to",
+                      "overrides": null,
+                      "scope": 2597,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2592,
+                        "name": "ElementaryTypeName",
+                        "src": "1766:7:2"
+                      }
+                    ],
+                    "id": 2593,
+                    "name": "VariableDeclaration",
+                    "src": "1766:10:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "value",
+                      "overrides": null,
+                      "scope": 2597,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2594,
+                        "name": "ElementaryTypeName",
+                        "src": "1787:7:2"
+                      }
+                    ],
+                    "id": 2595,
+                    "name": "VariableDeclaration",
+                    "src": "1787:13:2"
+                  }
+                ],
+                "id": 2596,
+                "name": "ParameterList",
+                "src": "1705:102:2"
+              }
+            ],
+            "id": 2597,
+            "name": "EventDefinition",
+            "src": "1685:123:2"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "AssetBurnEvent"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Event emitted when the main chain points are destroyed"
+                },
+                "id": 2598,
+                "name": "StructuredDocumentation",
+                "src": "1816:66:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "operation",
+                      "overrides": null,
+                      "scope": 2606,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2599,
+                        "name": "ElementaryTypeName",
+                        "src": "1909:6:2"
+                      }
+                    ],
+                    "id": 2600,
+                    "name": "VariableDeclaration",
+                    "src": "1909:16:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "from",
+                      "overrides": null,
+                      "scope": 2606,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2601,
+                        "name": "ElementaryTypeName",
+                        "src": "1927:7:2"
+                      }
+                    ],
+                    "id": 2602,
+                    "name": "VariableDeclaration",
+                    "src": "1927:12:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "value",
+                      "overrides": null,
+                      "scope": 2606,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2603,
+                        "name": "ElementaryTypeName",
+                        "src": "1941:7:2"
+                      }
+                    ],
+                    "id": 2604,
+                    "name": "VariableDeclaration",
+                    "src": "1941:13:2"
+                  }
+                ],
+                "id": 2605,
+                "name": "ParameterList",
+                "src": "1908:47:2"
+              }
+            ],
+            "id": 2606,
+            "name": "EventDefinition",
+            "src": "1888:68:2"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "approveEvent"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Event emitted when the main chain points authorized transfer"
+                },
+                "id": 2607,
+                "name": "StructuredDocumentation",
+                "src": "1964:72:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "operation",
+                      "overrides": null,
+                      "scope": 2613,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2608,
+                        "name": "ElementaryTypeName",
+                        "src": "2061:6:2"
+                      }
+                    ],
+                    "id": 2609,
+                    "name": "VariableDeclaration",
+                    "src": "2061:16:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "value",
+                      "overrides": null,
+                      "scope": 2613,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2610,
+                        "name": "ElementaryTypeName",
+                        "src": "2079:7:2"
+                      }
+                    ],
+                    "id": 2611,
+                    "name": "VariableDeclaration",
+                    "src": "2079:13:2"
+                  }
+                ],
+                "id": 2612,
+                "name": "ParameterList",
+                "src": "2060:33:2"
+              }
+            ],
+            "id": 2613,
+            "name": "EventDefinition",
+            "src": "2042:52:2"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "transferEvent"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Event emitted when the main chain points is transferred"
+                },
+                "id": 2614,
+                "name": "StructuredDocumentation",
+                "src": "2102:67:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "operation",
+                      "overrides": null,
+                      "scope": 2620,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2615,
+                        "name": "ElementaryTypeName",
+                        "src": "2195:6:2"
+                      }
+                    ],
+                    "id": 2616,
+                    "name": "VariableDeclaration",
+                    "src": "2195:16:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "value",
+                      "overrides": null,
+                      "scope": 2620,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2617,
+                        "name": "ElementaryTypeName",
+                        "src": "2213:7:2"
+                      }
+                    ],
+                    "id": 2618,
+                    "name": "VariableDeclaration",
+                    "src": "2213:13:2"
+                  }
+                ],
+                "id": 2619,
+                "name": "ParameterList",
+                "src": "2194:33:2"
+              }
+            ],
+            "id": 2620,
+            "name": "EventDefinition",
+            "src": "2175:53:2"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "takeOutEvent"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Event emitted when assets withdrawn"
+                },
+                "id": 2621,
+                "name": "StructuredDocumentation",
+                "src": "2236:47:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "operation",
+                      "overrides": null,
+                      "scope": 2627,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 2622,
+                        "name": "ElementaryTypeName",
+                        "src": "2308:6:2"
+                      }
+                    ],
+                    "id": 2623,
+                    "name": "VariableDeclaration",
+                    "src": "2308:16:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "to",
+                      "overrides": null,
+                      "scope": 2627,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2624,
+                        "name": "ElementaryTypeName",
+                        "src": "2326:7:2"
+                      }
+                    ],
+                    "id": 2625,
+                    "name": "VariableDeclaration",
+                    "src": "2326:10:2"
+                  }
+                ],
+                "id": 2626,
+                "name": "ParameterList",
+                "src": "2307:30:2"
+              }
+            ],
+            "id": 2627,
+            "name": "EventDefinition",
+            "src": "2289:49:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_CrossChainContractAdditional",
+              "overrides": null,
+              "scope": 2707,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract CrossChainContractAdditional",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "CrossChainContractAdditional",
+                  "referencedDeclaration": 2527,
+                  "type": "contract CrossChainContractAdditional"
+                },
+                "id": 2628,
+                "name": "UserDefinedTypeName",
+                "src": "2346:28:2"
+              }
+            ],
+            "id": 2629,
+            "name": "VariableDeclaration",
+            "src": "2346:67:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_Owner",
+              "overrides": null,
+              "scope": 2707,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 2631,
+                "name": "ElementaryTypeName",
+                "src": "2477:7:2"
+              },
+              {
+                "attributes": {
+                  "text": "@dev The person who deployed the contract"
+                },
+                "id": 2630,
+                "name": "StructuredDocumentation",
+                "src": "2426:45:2"
+              }
+            ],
+            "id": 2632,
+            "name": "VariableDeclaration",
+            "src": "2477:23:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_ChainCode",
+              "overrides": null,
+              "scope": 2707,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string"
+                },
+                "id": 2634,
+                "name": "ElementaryTypeName",
+                "src": "2547:6:2"
+              },
+              {
+                "attributes": {
+                  "text": "@dev Store subchain AC code "
+                },
+                "id": 2633,
+                "name": "StructuredDocumentation",
+                "src": "2509:32:2"
+              }
+            ],
+            "id": 2635,
+            "name": "VariableDeclaration",
+            "src": "2547:26:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_GatewayList",
+              "overrides": null,
+              "scope": 2707,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address[]",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "address[]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 2637,
+                    "name": "ElementaryTypeName",
+                    "src": "2614:7:2"
+                  }
+                ],
+                "id": 2638,
+                "name": "ArrayTypeName",
+                "src": "2614:9:2"
+              },
+              {
+                "attributes": {
+                  "text": "@dev Gateway node list"
+                },
+                "id": 2636,
+                "name": "StructuredDocumentation",
+                "src": "2582:26:2"
+              }
+            ],
+            "id": 2639,
+            "name": "VariableDeclaration",
+            "src": "2614:31:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_Version",
+              "overrides": null,
+              "scope": 2707,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string"
+                },
+                "id": 2641,
+                "name": "ElementaryTypeName",
+                "src": "2697:6:2"
+              },
+              {
+                "attributes": {
+                  "text": "@dev Contract version information"
+                },
+                "id": 2640,
+                "name": "StructuredDocumentation",
+                "src": "2654:37:2"
+              }
+            ],
+            "id": 2642,
+            "name": "VariableDeclaration",
+            "src": "2697:24:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_CrossTxObject",
+              "overrides": null,
+              "scope": 2707,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(bytes32 => struct Storage._CrossTxObj)",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(bytes32 => struct Storage._CrossTxObj)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 2643,
+                    "name": "ElementaryTypeName",
+                    "src": "2738:7:2"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "_CrossTxObj",
+                      "referencedDeclaration": 2692,
+                      "type": "struct Storage._CrossTxObj"
+                    },
+                    "id": 2644,
+                    "name": "UserDefinedTypeName",
+                    "src": "2749:11:2"
+                  }
+                ],
+                "id": 2645,
+                "name": "Mapping",
+                "src": "2730:31:2"
+              }
+            ],
+            "id": 2646,
+            "name": "VariableDeclaration",
+            "src": "2730:55:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_MainAsset",
+              "overrides": null,
+              "scope": 2707,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(bytes32 => uint256)",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(bytes32 => uint256)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 2648,
+                    "name": "ElementaryTypeName",
+                    "src": "2844:7:2"
+                  },
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 2649,
+                    "name": "ElementaryTypeName",
+                    "src": "2855:7:2"
+                  }
+                ],
+                "id": 2650,
+                "name": "Mapping",
+                "src": "2836:27:2"
+              },
+              {
+                "attributes": {
+                  "text": "@dev Number of main chain points"
+                },
+                "id": 2647,
+                "name": "StructuredDocumentation",
+                "src": "2794:36:2"
+              }
+            ],
+            "id": 2651,
+            "name": "VariableDeclaration",
+            "src": "2836:47:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_AllowValue",
+              "overrides": null,
+              "scope": 2707,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(bytes32 => uint256)",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(bytes32 => uint256)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 2653,
+                    "name": "ElementaryTypeName",
+                    "src": "2942:7:2"
+                  },
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 2654,
+                    "name": "ElementaryTypeName",
+                    "src": "2953:7:2"
+                  }
+                ],
+                "id": 2655,
+                "name": "Mapping",
+                "src": "2934:27:2"
+              },
+              {
+                "attributes": {
+                  "text": "@dev Number of authorized points"
+                },
+                "id": 2652,
+                "name": "StructuredDocumentation",
+                "src": "2892:36:2"
+              }
+            ],
+            "id": 2656,
+            "name": "VariableDeclaration",
+            "src": "2934:48:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_CrossTxNum",
+              "overrides": null,
+              "scope": 2707,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 2658,
+                "name": "ElementaryTypeName",
+                "src": "3054:7:2"
+              },
+              {
+                "attributes": {
+                  "text": "@dev Used to calculate cross-chain transaction number"
+                },
+                "id": 2657,
+                "name": "StructuredDocumentation",
+                "src": "2991:57:2"
+              }
+            ],
+            "id": 2659,
+            "name": "VariableDeclaration",
+            "src": "3054:28:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_MainChainCode",
+              "overrides": null,
+              "scope": 2707,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 2660,
+                "name": "ElementaryTypeName",
+                "src": "3089:7:2"
+              }
+            ],
+            "id": 2661,
+            "name": "VariableDeclaration",
+            "src": "3089:31:2"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Storage._CrossTxObj",
+              "name": "_CrossTxObj",
+              "scope": 2707,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "CrossTxNo",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 2662,
+                    "name": "ElementaryTypeName",
+                    "src": "3873:6:2"
+                  }
+                ],
+                "id": 2663,
+                "name": "VariableDeclaration",
+                "src": "3873:16:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "SrcChainCode",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 2664,
+                    "name": "ElementaryTypeName",
+                    "src": "3900:6:2"
+                  }
+                ],
+                "id": 2665,
+                "name": "VariableDeclaration",
+                "src": "3900:19:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "DestChainCode",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 2666,
+                    "name": "ElementaryTypeName",
+                    "src": "3930:6:2"
+                  }
+                ],
+                "id": 2667,
+                "name": "VariableDeclaration",
+                "src": "3930:20:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "SrcBid",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 2668,
+                    "name": "ElementaryTypeName",
+                    "src": "3961:6:2"
+                  }
+                ],
+                "id": 2669,
+                "name": "VariableDeclaration",
+                "src": "3961:13:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "DestBid",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 2670,
+                    "name": "ElementaryTypeName",
+                    "src": "3985:6:2"
+                  }
+                ],
+                "id": 2671,
+                "name": "VariableDeclaration",
+                "src": "3985:14:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "TxType",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint8",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint8",
+                      "type": "uint8"
+                    },
+                    "id": 2672,
+                    "name": "ElementaryTypeName",
+                    "src": "4010:5:2"
+                  }
+                ],
+                "id": 2673,
+                "name": "VariableDeclaration",
+                "src": "4010:12:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "Payload",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bytes",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes",
+                      "type": "bytes"
+                    },
+                    "id": 2674,
+                    "name": "ElementaryTypeName",
+                    "src": "4033:5:2"
+                  }
+                ],
+                "id": 2675,
+                "name": "VariableDeclaration",
+                "src": "4033:13:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "Remark",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 2676,
+                    "name": "ElementaryTypeName",
+                    "src": "4057:6:2"
+                  }
+                ],
+                "id": 2677,
+                "name": "VariableDeclaration",
+                "src": "4057:13:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "Result",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "enum Storage.TxResultEnum",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "TxResultEnum",
+                      "referencedDeclaration": 2537,
+                      "type": "enum Storage.TxResultEnum"
+                    },
+                    "id": 2678,
+                    "name": "UserDefinedTypeName",
+                    "src": "4081:12:2"
+                  }
+                ],
+                "id": 2679,
+                "name": "VariableDeclaration",
+                "src": "4081:19:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "Refunded",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "enum Storage.TxRefundedEnum",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "TxRefundedEnum",
+                      "referencedDeclaration": 2541,
+                      "type": "enum Storage.TxRefundedEnum"
+                    },
+                    "id": 2680,
+                    "name": "UserDefinedTypeName",
+                    "src": "4111:14:2"
+                  }
+                ],
+                "id": 2681,
+                "name": "VariableDeclaration",
+                "src": "4111:23:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "Extension",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 2682,
+                    "name": "ElementaryTypeName",
+                    "src": "4145:6:2"
+                  }
+                ],
+                "id": 2683,
+                "name": "VariableDeclaration",
+                "src": "4145:16:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "SendProofs",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "struct Storage._SendProof",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "_SendProof",
+                      "referencedDeclaration": 2699,
+                      "type": "struct Storage._SendProof"
+                    },
+                    "id": 2684,
+                    "name": "UserDefinedTypeName",
+                    "src": "4172:10:2"
+                  }
+                ],
+                "id": 2685,
+                "name": "VariableDeclaration",
+                "src": "4172:21:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "AckProofs",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "struct Storage._AckProof",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "_AckProof",
+                      "referencedDeclaration": 2706,
+                      "type": "struct Storage._AckProof"
+                    },
+                    "id": 2686,
+                    "name": "UserDefinedTypeName",
+                    "src": "4204:9:2"
+                  }
+                ],
+                "id": 2687,
+                "name": "VariableDeclaration",
+                "src": "4204:19:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "Version",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 2688,
+                    "name": "ElementaryTypeName",
+                    "src": "4234:6:2"
+                  }
+                ],
+                "id": 2689,
+                "name": "VariableDeclaration",
+                "src": "4234:14:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "Origin",
+                  "overrides": null,
+                  "scope": 2692,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "enum Storage.TxOriginEnum",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "TxOriginEnum",
+                      "referencedDeclaration": 2545,
+                      "type": "enum Storage.TxOriginEnum"
+                    },
+                    "id": 2690,
+                    "name": "UserDefinedTypeName",
+                    "src": "4259:12:2"
+                  }
+                ],
+                "id": 2691,
+                "name": "VariableDeclaration",
+                "src": "4259:19:2"
+              }
+            ],
+            "id": 2692,
+            "name": "StructDefinition",
+            "src": "3843:443:2"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Storage._SendProof",
+              "name": "_SendProof",
+              "scope": 2707,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "LedgerSeq",
+                  "overrides": null,
+                  "scope": 2699,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 2693,
+                    "name": "ElementaryTypeName",
+                    "src": "4515:7:2"
+                  }
+                ],
+                "id": 2694,
+                "name": "VariableDeclaration",
+                "src": "4515:17:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "TxHash",
+                  "overrides": null,
+                  "scope": 2699,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 2695,
+                    "name": "ElementaryTypeName",
+                    "src": "4543:6:2"
+                  }
+                ],
+                "id": 2696,
+                "name": "VariableDeclaration",
+                "src": "4543:13:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "verifieraddr",
+                  "overrides": null,
+                  "scope": 2699,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 2697,
+                    "name": "ElementaryTypeName",
+                    "src": "4567:7:2"
+                  }
+                ],
+                "id": 2698,
+                "name": "VariableDeclaration",
+                "src": "4567:20:2"
+              }
+            ],
+            "id": 2699,
+            "name": "StructDefinition",
+            "src": "4486:109:2"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Storage._AckProof",
+              "name": "_AckProof",
+              "scope": 2707,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "LedgerSeq",
+                  "overrides": null,
+                  "scope": 2706,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 2700,
+                    "name": "ElementaryTypeName",
+                    "src": "4839:7:2"
+                  }
+                ],
+                "id": 2701,
+                "name": "VariableDeclaration",
+                "src": "4839:17:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "TxHash",
+                  "overrides": null,
+                  "scope": 2706,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 2702,
+                    "name": "ElementaryTypeName",
+                    "src": "4867:6:2"
+                  }
+                ],
+                "id": 2703,
+                "name": "VariableDeclaration",
+                "src": "4867:13:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "verifieraddr",
+                  "overrides": null,
+                  "scope": 2706,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 2704,
+                    "name": "ElementaryTypeName",
+                    "src": "4891:7:2"
+                  }
+                ],
+                "id": 2705,
+                "name": "VariableDeclaration",
+                "src": "4891:20:2"
+              }
+            ],
+            "id": 2706,
+            "name": "StructDefinition",
+            "src": "4811:108:2"
+          }
+        ],
+        "id": 2707,
+        "name": "ContractDefinition",
+        "src": "204:4718:2"
+      }
+    ],
+    "id": 2708,
+    "name": "SourceUnit",
+    "src": "33:4891:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-09-16T08:23:33.543Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "stateVariables": {
+      "_AllowValue": {
+        "details": "Number of authorized points"
+      },
+      "_ChainCode": {
+        "details": "Store subchain AC code "
+      },
+      "_CrossTxNum": {
+        "details": "Used to calculate cross-chain transaction number"
+      },
+      "_GatewayList": {
+        "details": "Gateway node list"
+      },
+      "_MainAsset": {
+        "details": "Number of main chain points"
+      },
+      "_Owner": {
+        "details": "The person who deployed the contract"
+      },
+      "_Version": {
+        "details": "Contract version information"
+      }
+    },
+    "title": "Cross-chain contract storage contract",
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "AssetBurnEvent(string,address,uint256)": {
+        "notice": "Event emitted when the main chain points are destroyed"
+      },
+      "AssetMintEvent(string,address,address,uint256)": {
+        "notice": "Event emitted when the main chain points are cast"
+      },
+      "approveEvent(string,uint256)": {
+        "notice": "Event emitted when the main chain points authorized transfer"
+      },
+      "sendAckedEvent(string,string,uint8)": {
+        "notice": "Event emitted when gateway submitted cross-chain transaction confirmation"
+      },
+      "sendTxEvent(string,string,uint8)": {
+        "notice": "Event emitted when gateway submitted cross-chain transaction"
+      },
+      "setChainCodeEvent(string,string)": {
+        "notice": "Event emitted when chaincode is set"
+      },
+      "setGatewayEvent(string,address)": {
+        "notice": "Event emitted when gateway is set"
+      },
+      "startTxEvent(string,string,uint8)": {
+        "notice": "Event emitted when user sent cross-chain transaction"
+      },
+      "takeOutEvent(string,address)": {
+        "notice": "Event emitted when assets withdrawn"
+      },
+      "transferEvent(string,uint256)": {
+        "notice": "Event emitted when the main chain points is transferred"
+      }
+    },
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
